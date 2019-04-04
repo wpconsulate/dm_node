@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-total.js@latest:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/total.js/-/total.js-3.2.4.tgz#656cdec1a804a3cda4cb3b26a65825116a6ba0ba"
-  integrity sha512-QiEcGYQm24VRVpBJuTTubEZK1wIUxJ7TxkcqT4koh5zzRbXXDBUIsxQxMDrceIcMIkZbSjYAQAxu6Bd5rkqL4g==
+total.js@^3.3.0-13:
+  version "3.3.0-13"
+  resolved "https://registry.yarnpkg.com/total.js/-/total.js-3.3.0-13.tgz#b40d8ede00d0c51f5315c646d7f63e944d20e3b6"
+  integrity sha512-nGUTjwkI71tE5G4W4wOwqBKN8IDYjDdposhRXo7jKvQrU7EAD50YlwecBaXG9KKZdy83afaHE7eIOEGZfzWfAQ==
