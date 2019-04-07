@@ -20,8 +20,8 @@ h1 { font-family: $font; margin: 0 0 20px 0; padding: 0; font-weight: 700; font-
 h2 { font-family: $font; margin: 0 0 15px 0; padding: 0; font-weight: 700; font-size: 23px; }
 h3 { font-family: $font; margin: 0 0 10px 0; padding: 0; font-weight: 700; font-size: 18px; }
 
-header { border-bottom: 1px solid #E0E0E0; height: 80px; }
-header nav { margin: 5px 0 0 30px; padding: 18px 0 18px 30px; float: right; }
+header { /*border-bottom: 1px solid #E0E0E0;*/ height: 80px; }
+header nav { /*margin: 5px 0 0 30px;*/ padding: 18px 0 18px 30px; float: right; }
 header nav a { font-size: 14px; color: black; text-transform: uppercase; font-weight: bold; margin-left: 10px; padding: 5px 7px; display: inline-block; position: relative; font-family: $font; border-radius: 3px; }
 header nav a:first-child { margin-left: 0; }
 header nav a:hover { text-decoration: none; color: #505050; }
@@ -31,7 +31,7 @@ header nav .fa { margin-right: 8px; }
 header .linkbutton { border-radius: 100px; color: #D0D0D0; font-size: 20px; padding: 25px 0; width: 100%; display: block; border: 2px solid gray; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: all 0.3s; font-weight: bold; }
 header .linkbutton .fa { margin-right: 10px; }
 header .linkbutton:hover { text-decoration: none; background-color: #303030; color: white; border-color: white; }
-header .logo { float: left; margin: 12px 0 10px 20px; width: 150px; }
+header .logo { float: left; margin: 2px 0 10px 20px; width: 200px; }
 
 footer { text-align: center; padding: 20px 0; margin: 50px auto 0; border-top: 1px solid #E0E0E0; font-size: 11px; color: gray; max-width: 500px; }
 footer nav { margin-bottom: 3px; }

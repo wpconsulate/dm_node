@@ -1,57 +1,374 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=10" />
-	<meta name="format-detection" content="telephone=no" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="robots" content="all,follow" />
-	<link rel="stylesheet" href="//cdn.componentator.com/spa.min@16.css" />
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700" />
-	<link rel="stylesheet" href="@{global.css}" />
-	<script src="//cdn.componentator.com/spa.min@16.js"></script>
-	@{import('meta', 'default.css', 'default.js', 'favicon.ico', 'head')}
-</head>
-<body data-jc="exec">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DM+ – Innovation though Imagination</title>
+  <meta name="description" content="Innovation though Imagination" />
+  <meta name="robots" content="noodp,noydir" />
+  
 
-	<div data-jc="loading" class="hidden"></div>
+  <link rel="stylesheet" type="text/css" href="/default/css/css.css">
+  <link rel="stylesheet" type="text/css" href="/default/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/default/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/default/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/default/css/style.css">
 
-	<header>
-		<div class="container">
-			<div class="row">
-				<div class="mainmenubutton">
-					<button id="mainmenubutton"><i class="fa fa-navicon"></i></button>
-				</div>
-				<a href="/" class="logo"><img src="@{'logo.png'}" border="0" class="img-responsive" /></a>
-				<nav>
-					@{foreach m in global.navigations.mainmenu.children}
-						<a href="@{m.url}"@{if m.contains(url)} class="selected"@{fi}>@{if m.icon}<i class="@{m.icon}"></i>@{fi}@{m.name}</a>
-					@{end}
-				</nav>
-			</div>
-		</div>
-	</header>
+  <!-- =======================================================
+    Theme Name: Laura
+    Theme URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+    ======================================================= -->
+  </head>
 
-	<div class="container@{if repository.fluid}-fluid@{fi}">
-		<ul class="breadcrumb">
-			@{foreach m in sitemap()}
-				<li><a href="@{m.url}">@{if index === 0}<i class="fa fa-home"></i>@{fi}@{m.name}</a></li>
-			@{end}
-		</ul>
-		@{body}
-	</div>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="myFunction()">
+    <div class="header">
+      <div class="bg-color">
+        <header id="main-header">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                
+                <a href="/" class="logo"><img src="@{'logo.png'}" border="0" class="img-responsive" /></a>
+              </div>
+              <div class="collapse navbar-collapse" id="lauraMenu">
+                <ul class="nav navbar-nav navbar-left navbar-border">
+                  <li class="active"><a href="#main-header">Home</a></li>
+                  <li><a href="#about">Service</a></li>
+                  <li><a href="#portfolio">Work</a></li>
+                  <li><a href=/blog/">Blog</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div>
 
-	<footer>
-		<nav>
-		@{foreach m in global.navigations.mainmenu.children}
-			<a href="@{m.url}">@{m.name}</a>
-		@{end}
-		</nav>
-		<div>@(All rights reserved &copy; 2018)</div>
-	</footer>
+                </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lauraMenu">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <div class="wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 wow fadeIn delay-05s">
+                <div class="banner-text">
+                  <h2>Out of box ideas needs</h2>	
+                  <h2>out of box thinking</h2>
+                  <h3>Don't be a tom dick hary, Awwsome brand needs<br/> Anawesome website</h3>
+                  <h3>Good is not good, Better will not work,<br />It should be</h3>
+                </div>
+                <div class="overlay-detail text-center">
+                  <a href="#about"><i class="fa fa-angle-down"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="service" class=" section wow fadeIn delay-05s">   
+      <div class="container-fluid">
+        <div class="row ">       
 
+          <div class="col-sm-2 work-border">
+            <blockquote>
+              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_1-1.png">
+              <h5>EXPERTS</h5>
+              <p>Our experts is committed to delivering high quality products to clients helping them in this constantly changing and challenging biz world.Our professional approach, creativity, fast and effective communication, reliability, trust and relationship with the clients help in delivering the best possible solution to the client.</p>
+            </blockquote>
+            <div class="col-sm-12">
+              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
+            </div>
+          </div>
+          <div class="col-sm-2 col-half-offset work-border">
+            <blockquote>
+              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_2-1.png">
+              <h5>FREE TECHNICAL SUPPORT</h5>
+              <p>Each and every member of the team are all the time available on tools like Skype so that they can be approached anytime during the development phase of a project. In additions, sending daily updates during development of a project is mandatory for every member of the team. This helps in reducing the communication gap which can ruin a project development.</p>
+            </blockquote>
+            <div class="col-sm-12">
+              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
+            </div>
+          </div>
+          <div class="col-sm-2 col-half-offset work-border">
+            <blockquote>
+              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_3-1.png">
+              <h5>PROJECTS COMPLETED</h5>
+              <p>Dmarkweb has worked for more than 100 clients and have completed more than 500 projects till date. Dmarkweb brings a lot of value addition for every client they have worked with. Dmarkweb excels not in providing the design and development of a project but also uses proper project management techniques. </p>
+            </blockquote>
+            <div class="col-sm-12">
+              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
+            </div>
+          </div>
+          <div class="col-sm-2 col-half-offset work-border">
+            <blockquote>
+              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_4-1.png">
+              <h5>EXPERIENCE</h5>
+              <p>Dmarkweb has more than 6 years of work experience. We have a team that strives hard to deliver innovative and quality solutions that are customer centric. Our main aim is to enhance our consumer’s experience with our solutions by providing them just what they imagined. </p>
+            </blockquote>
+            <div class="col-sm-12">
+              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
+            </div>
+          </div>
+          <div class="col-sm-2 col-half-offset work-border">
+            <blockquote>
+              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_3-1.png">
+              <h5>EXPERIENCE</h5>
+              <p>If you want to work with honest, reliable, and speedy team, then stop searching and award your project to Cleverbird. I couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award yourvI couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award your. </p>
+            </blockquote>
+            <div class="col-sm-12">
+              <div class="pull-right"> <span class="testimonials-name">Get in touch</span></div>
+            </div>
+          </div>
+          <div class="col-sm-2 col-half-offset work-border">
+            <blockquote>
+              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_3-1.png">
+              <h5>EXPERIENCE</h5>
+              <p>If you want to work with honest, reliable, and speedy team, then stop searching and award your project to Cleverbird. I couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award yourvI couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award your. </p>
+            </blockquote>
+            <div class="col-sm-12">
+              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
+            </div>
+          </div>        
+        </div>    
+      </div>
+    </section>
+    <section id="about" class="section-padding wow fadeIn delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+          <h2 class="title text-center">WHAT OUR <span class="deco">Client</span> Say	</h2>
+        </div>
+          <div class="test-sec">
+            <div class="col-sm-3">
+              <div class="card1">
+                <a href=" /ecommerce ">
+                  <div class="card-icn3 card-icn--ux-design"></div>         
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card2">
+                <a href=" /responsive-design ">
+                  <div class="card-icn4 card-icn--ux-design"></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card3">
+                <a href=" /web-design ">
+                  <div class="card-icn1 card-icn--ux-design"></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card1">
+                <a href=" /ecommerce ">
+                  <div class="card-icn3 card-icn--ux-design"></div>         
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card2">
+                <a href=" /responsive-design ">
+                  <div class="card-icn4 card-icn--ux-design"></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card3">
+                <a href=" /web-design ">
+                  <div class="card-icn1 card-icn--ux-design"></div>
+                </a>
+              </div>
+            </div>
 
-	<script src="@{global.js}"></script>
+            <div class="col-sm-3">
+              <div class="card1">
+                <a href=" /web-design ">
+                  <div class="card-icn1 card-icn--ux-design"></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card2">
+                <a href=" /web-design ">
+                  <div class="card-icn1 card-icn--ux-design"></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card3">
+                <a href=" /web-design ">
+                  <div class="card-icn1 card-icn--ux-design"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="portfolio" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="title text-center">Let's <span class="deco">See</span> My Work</h2>
+          </div>
+          <div class="col-md-12">
+            <div id="myGrid" class="grid-padding">
+              <div class="col-md-4 col-sm-4 padding-right-zero">
+                <a href=""><img src="default/img/portfolio01.jpg" class="img-responsive"></a>
+                <a href=""><img src="default/img/port01.jpg" class="img-responsive"></a>
+                <a href=""><img src="default/img/port02.jpg" class="img-responsive"></a>
 
+              </div>
+              <div class="col-md-4 col-sm-4 padding-right-zero">
+                <a href=""><img src="default/img/port03.jpg" class="img-responsive"></a>
+                <a href=""><img src="default/img/port04.jpg" class="img-responsive"></a>
+                <a href=""><img src="default/img/port05.jpg" class="img-responsive"></a>
+
+              </div>
+              <div class="col-md-4 col-sm-4 padding-right-zero">
+                <a href=""><img src="default/img/port06.jpg" class="img-responsive"></a>
+                <a href=""><img src="default/img/port02.jpg" class="img-responsive"></a>
+                <a href=""><img src="default/img/portfolio02.jpg" class="img-responsive"></a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonial" class="section-padding wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <h2 class="title text-center">WHAT OUR <span class="deco">Client</span> Say	</h2>
+          <div class="test-sec">
+            <div class="col-sm-4">
+              <blockquote>
+                <p>If you want to work with honest, reliable, and speedy team, then stop searching and award your project to Cleverbird. I couldn't be more satisfied. If you want to work with honest, reliable, and speedy team, then stop searching and award your couldn't be more satisfied. If you want to work with honest, reliable, and speedy team, then stop searching and award your.</p>
+              </blockquote>
+              <div class="carousel-info">
+                <div class="pull-left"> <span class="testimonials-name">Morgan</span> <span class="testimonials-post">CEO,  Company Inc.</span> </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <blockquote>
+                <p>Great quality, Great work, Awesome results, and exceptionally competitive pricing is how I will describe WebinaCube! I already have referred them to various colleagues & friends of mine and will gladly recommend them to anyone needing web design and web development services. They have very efficiently accomplished my wordpress development Project.</p>
+              </blockquote>
+              <div class="carousel-info">
+                <div class="pull-left"> <span class="testimonials-name">Nathalie Ung</span> <span class="testimonials-post">CEO,  Company Inc.</span> </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <blockquote>
+                <p>If you want to work with honest, reliable, and speedy team, then stop searching and award your project to Cleverbird. I couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award yourvI couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award your. </p>
+              </blockquote>
+              <div class="carousel-info">
+                <div class="pull-left"> <span class="testimonials-name">Morgan Beulher</span> <span class="testimonials-post">CEO,  Company Inc.</span> </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section-padding wow fadeIn delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="contact-sec text-center">
+              <h2>Lets’s make a deal and work it out.|</h2>
+              <p>We are driven by creating experiences that deliver results for your business and for your consumers.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 ">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+
+              <div class="text-left"><button type="submit" class="btn btn-primary btn-lg">Send Message</button></div>
+            </form>
+          </div>
+          <div class="col-md-6">
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <footer class="footer-2 text-center-xs bg--white">
+      <div class="container">
+        <!--end row-->
+        <div class="row">
+       <!-- <div class="col-md-6">
+          <div class="footer">
+            © Copyright Laura Theme. All Rights Reserved
+            <div class="credits">
+              
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          <ul class="social-list">
+            <li>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-dribbble"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-vimeo"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>-->
+        <div class="col-md-12"><p class="text-center mt-5"><a href="#about" rel="nofollow">Return to top of page</a></p></div>
+      </div>
+      <!--end row-->
+    </div>
+  </footer>
+
+  <script src="/default/js/jquery.min.js"></script>
+  <script src="/default/js/jquery.easing.min.js"></script>
+  <script src="/default/js/bootstrap.min.js"></script>
+  <script src="/default/js/wow.js"></script>
+  <script src="/default/js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+
+  <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
 </body>
+
 </html>

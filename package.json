@@ -1,5 +1,5 @@
 {
-  "name": "dmark",
+  "name": "DM+",
   "description": "Website for Dmark Solutions",
   "version": "7.0.1",
   "main": "release.js",
@@ -8,7 +8,7 @@
     "url": "https://github.com/totaljs/cms"
   },
   "dependencies": {
-    "total.js": "^3.3.0-13"
+    "total.js": "^3.2.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

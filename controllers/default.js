@@ -1,11 +1,14 @@
 exports.install = function() {
 	ROUTE('/*', view_cms);
+	ROUTE('/blog/');
+	ROUTE('/references/');
 
 	ROUTE('#posts',   view_posts,        ['*Post']);
 	ROUTE('#post',    view_posts_detail, ['*Post']);
 	ROUTE('#notices', view_notices,      ['*Notice']);
 
 	ROUTE('/design/', '=design/index');
+	LOCALIZE('/components/*.html', ['compress']);
 };
 
 function view_cms() {
