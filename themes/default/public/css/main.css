@@ -682,6 +682,7 @@ a:focus{
     justify-content:center;
     font-size:23px;
     width:52px;
+    font:normal normal normal 23px/2 FontAwesome!important;
     height:52px;
     border-radius:100%;
     padding:0
@@ -2328,7 +2329,7 @@ a:focus{
         width:30px
     }
 }
-.scroll-up{
+.fa-arrow-up{
     position:fixed;
     right:50px;
     bottom:50px;
@@ -3686,7 +3687,9 @@ a:focus{
 }
 .tabs__icon{
     font-size:50px;
-    margin-bottom:5px
+    margin-bottom:5px;
+    display:block!important;
+    font-size: 50px!important
 }
 .tabs__underline{
     position:absolute;
