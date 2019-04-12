@@ -1,374 +1,1541 @@
-
 <!DOCTYPE html>
+<!-- saved from url=(0051)https://artemsemkin.com/harizma/html/blog-grid.html -->
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DM+ – Innovation though Imagination</title>
   <meta name="description" content="Innovation though Imagination" />
   <meta name="robots" content="noodp,noydir" />
-  
+    <style>
+        :root {
+            --color-accent-primary: #1869ff;
+            --color-accent-primary-rgb: 24, 105, 255;
+            --color-accent-secondary: #b388ff;
+            --color-accent-secondary-rgb: 179, 136, 255;
+            --font-primary: 'Open Sans';
+            --font-secondary: 'Montserrat'
+        }
+        
+        html {
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility
+        }
+        
+        body {
+            position: relative;
+            width: 100%;
+            min-width: 320px;
+            font-family: "Open Sans", sans-serif;
+            font-size: 100%;
+            line-height: 1.53
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto
+        }
+        
+        .jarallax {
+            overflow: hidden
+        }
+        
+        .bg-light {
+            background-color: #f5f5f5
+        }
+        
+        .bg-black {
+            background-color: #1a1a1a
+        }
+        
+        .bg-white {
+            background-color: #fff
+        }
+        
+        .bg-accent {
+            background-color: var(--color-accent-primary)
+        }
+        
+        .burger {
+            position: relative;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            padding: 0 6px;
+            z-index: 600
+        }
+        
+        .burger__line {
+            width: 100%;
+            height: 2px;
+            margin: 2px 0;
+            background-color: var(--color-accent-primary)
+        }
+        
+        .figure-post {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding-bottom: 30px;
+            z-index: 50
+        }
+        
+        .figure-post_shadow {
+            box-shadow: 0 10px 30px 0 rgba(20, 20, 20, .1)
+        }
+        
+        .figure-post__wrapper-thumbnail {
+            display: block
+        }
+        
+        .figure-post__wrapper-thumbnail img {
+            width: 100%
+        }
+        
+        ::-webkit-input-placeholder {
+            color: #adadad
+        }
+        
+        ::-moz-placeholder {
+            color: #adadad
+        }
+        
+        :-moz-placeholder {
+            color: #adadad
+        }
+        
+        :-ms-input-placeholder {
+            color: #adadad
+        }
+        
+        .header .social__icon {
+            padding: 5px;
+            background-color: rgba(24, 24, 24, .2);
+            width: 40px!important;
+            height: 40px!important;
+            font-size: 14px
+        }
+        
+        .header__container {
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 25px;
+            padding-bottom: 25px
+        }
+        
+        .header__row {
+            margin-left: -25px;
+            margin-right: -25px
+        }
+        
+        .header__col {
+            padding-left: 25px;
+            padding-right: 25px
+        }
+        
+        .header__wrapper-right {
+            margin-left: auto
+        }
+        
+        .header_absolute {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            z-index: 500
+        }
+        
+        .header_absolute.header_white .menu>li>a {
+            color: #fff
+        }
+        
+        .header_absolute.header_white .menu>li:not(.menu-item-has-children)>a:before {
+            background-color: #fff
+        }
+        
+        .header_absolute.header_white .burger__line {
+            background-color: #fff
+        }
+        
+        .header__wrapper-overlay-menu {
+            display: flex;
+            flex-wrap: wrap;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 500;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-top: 120px;
+            padding-bottom: 120px;
+            opacity: 0;
+            visibility: hidden;
+            will-change: opacity, visibility
+        }
+        
+        .header__overlay {
+            z-index: -1;
+            opacity: .6!important
+        }
+        
+        .header__diagonal-curtain-1,
+        .header__diagonal-curtain-2 {
+            position: absolute;
+            width: 3000px;
+            height: 3000px;
+            z-index: 0
+        }
+        
+        .header__diagonal-curtain-1 {
+            bottom: 100%;
+            right: 20%;
+            -webkit-transform: rotate(-49deg);
+            transform: rotate(-49deg);
+            -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+            background-color: #1a1a1a
+        }
+        
+        .header__diagonal-curtain-2 {
+            bottom: 0;
+            left: 80%;
+            -webkit-transform: rotate(-49deg);
+            transform: rotate(-49deg);
+            -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+            background-color: #1a1a1a
+        }
+        
+        .header__wrapper-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden
+        }
+        
+        .header__overlay-menu-back {
+            position: fixed;
+            top: 65px;
+            left: 50px;
+            z-index: 100;
+            color: #fff;
+            font-size: 30px
+        }
+        
+        .header__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            will-change: opacity, visibility, transform
+        }
+        
+        .header__wrapper-overlay-widgets {
+            margin: 15px 0;
+            text-align: center;
+            width: 100%
+        }
+        
+        @media only screen and (max-width:1200px) {
+            .header__container {
+                padding-left: 30px;
+                padding-right: 30px
+            }
+            .header__overlay-menu-back {
+                top: 45px;
+                left: 30px
+            }
+            .header__wrapper-overlay-menu {
+                padding-top: 100px;
+                padding-bottom: 100px
+            }
+        }
+        
+        @media only screen and (max-width:991px) {
+            .header .logo {
+                height: 60px
+            }
+        }
+        
+        @media only screen and (max-width:767px) {
+            .header__container {
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 15px;
+                padding-bottom: 15px
+            }
+            .header__row {
+                margin-left: -15px;
+                margin-right: -15px
+            }
+            .header__col {
+                padding-left: 15px;
+                padding-right: 15px
+            }
+            .header__overlay-menu-back {
+                top: 32px;
+                left: 15px
+            }
+        }
+        
+        .logo {
+            display: block;
+            height: 110px
+        }
+        
+        .logo img {
+            width: auto;
+            height: 100%
+        }
+        
+        @media only screen and (max-width:1200px) {
+            .logo {
+                height: 80px
+            }
+        }
+        
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%
+        }
+        
+        .menu>li {
+            position: relative;
+            display: inline-block;
+            margin-right: 42px
+        }
+        
+        .menu>li>a {
+            display: block;
+            color: #333;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: .1px;
+            line-height: 2
+        }
+        
+        .menu>li:last-child {
+            margin-right: 0
+        }
+        
+        .menu>li.menu-item-has-children>a:after {
+            content: '\f107';
+            font-family: FontAwesome;
+            font-size: 14px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px
+        }
+        
+        .menu>li:not(.menu-item-has-children)>a:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: #333;
+            bottom: 0;
+            right: 1px
+        }
+        
+        .menu .sub-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 3px 14px 0 rgba(162, 162, 162, .65);
+            z-index: 50
+        }
+        
+        .menu .sub-menu>li {
+            position: relative;
+            display: block;
+            white-space: nowrap
+        }
+        
+        .menu .sub-menu>li a {
+            display: flex;
+            align-items: center;
+            padding: 10px 30px;
+            color: #333
+        }
+        
+        .menu .sub-menu>li.menu-item-has-children>a:after {
+            content: '\f105';
+            font-family: FontAwesome;
+            font-size: 14px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: auto;
+            margin-top: 2px;
+            padding-left: 20px
+        }
+        
+        .menu .sub-menu ul {
+            top: -10px;
+            left: calc(100% - 10px);
+            -webkit-transform: translate(10px, 0);
+            transform: translate(10px, 0);
+            width: 100%
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: -1;
+            will-change: transform
+        }
+        
+        .overlay_dark {
+            background-color: #333;
+            opacity: .65;
+            mix-blend-mode: multiply
+        }
+        
+        .overlay_accent {
+            background-color: var(--color-accent-primary);
+            opacity: .95;
+            mix-blend-mode: multiply
+        }
+        
+        .menu-overlay {
+            position: relative;
+            margin-top: auto;
+            margin-bottom: auto;
+            list-style-type: none;
+            text-align: center;
+            z-index: 50
+        }
+        
+        .menu-overlay>li {
+            display: block;
+            margin: 20px 0
+        }
+        
+        .menu-overlay>li>a {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            color: #fff;
+            font-size: 40px;
+            font-weight: 700
+        }
+        
+        .menu-overlay>li:not(.menu-item-has-children)>a span {
+            display: inline-block;
+            position: relative
+        }
+        
+        .menu-overlay>li:not(.menu-item-has-children)>a span:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            bottom: 0;
+            right: 5px
+        }
+        
+        .menu-overlay .sub-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            z-index: 100
+        }
+        
+        .menu-overlay .sub-menu>li {
+            display: block
+        }
+        
+        .menu-overlay .sub-menu>li>a {
+            display: block;
+            position: relative;
+            font-size: 24px;
+            font-weight: 700;
+            overflow: hidden;
+            color: #fff
+        }
+        
+        .menu-overlay .sub-menu>li>a span {
+            display: inline-block
+        }
+        
+        .menu-overlay .sub-menu>li>a .menu-overlay__item-wrapper {
+            padding: 10px 15px
+        }
+        
+        .menu-overlay .sub-menu>li:not(.menu-item-has-children)>a .menu-overlay__item-wrapper:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            bottom: 10px;
+            right: 15px
+        }
+        
+        @media only screen and (max-width:767px) {
+            .menu-overlay>li>a {
+                font-size: 30px
+            }
+            .menu-overlay .sub-menu>li>a {
+                font-size: 18px
+            }
+        }
+        
+        .preloader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 999;
+            overflow: hidden
+        }
+        
+        .preloader__curtain {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 3000px;
+            height: 3000px;
+            -webkit-transform: skew(45deg);
+            transform: skew(45deg);
+            -webkit-transform-origin: bottom right;
+            transform-origin: bottom right
+        }
+        
+        .preloader__curtain:nth-child(1) {
+            z-index: 0
+        }
+        
+        .preloader__curtain:nth-child(2) {
+            z-index: 1
+        }
+        
+        .preloader__curtain:nth-child(3) {
+            z-index: 2
+        }
+        
+        .preloader__progress {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 320px;
+            z-index: 50
+        }
+        
+        .preloader__progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: left center;
+            transform-origin: left center
+        }
+        
+        @media only screen and (max-width:767px) {
+            .preloader__progress {
+                max-width: 270px
+            }
+        }
+        
+        .scroll-up {
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            z-index: 500
+        }
+        
+        .scroll-up__icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-accent-primary);
+            border-radius: 100%;
+            color: #fff;
+            font-size: 24px
+        }
+        
+        @media only screen and (max-width:991px) {
+            .scroll-up {
+                width: 50px;
+                height: 50px;
+                right: 30px;
+                bottom: 30px;
+                font-size: 20px
+            }
+        }
+        
+        .section {
+            position: relative
+        }
+        
+        .section_pt {
+            padding-top: 160px
+        }
+        
+        .section_pb {
+            padding-bottom: 160px
+        }
+        
+        @media only screen and (max-width:1400px) {
+            .section_pt {
+                padding-top: 120px
+            }
+            .section_pb {
+                padding-bottom: 120px
+            }
+        }
+        
+        @media only screen and (max-width:1200px) {
+            .section_pt {
+                padding-top: 80px
+            }
+            .section_pb {
+                padding-bottom: 80px
+            }
+        }
+        
+        @media only screen and (max-width:767px) {
+            .section_pt {
+                padding-top: 60px
+            }
+            .section_pb {
+                padding-bottom: 60px
+            }
+        }
+        
+        .section-blog__wrapper-post {
+            margin-bottom: 30px
+        }
+        
+        .section-masthead {
+            display: flex
+        }
+        
+        .section-masthead h1:not(.section-masthead__subheading) {
+            font-family: "Open Sans", sans-serif;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.5em
+        }
+        
+        .section-masthead__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 50;
+            min-height: 500px
+        }
+        
+        .section-masthead__header_background {
+            padding-top: 250px;
+            padding-bottom: 250px;
+            min-height: 800px
+        }
+        
+        .section-masthead__subheading {
+            font-size: 60px;
+            line-height: 1.3;
+            font-family: Montserrat, sans-serif
+        }
+        
+        @media only screen and (max-width:1400px) {
+            .section-masthead__header_background {
+                padding-top: 160px;
+                padding-bottom: 160px;
+                min-height: 700px
+            }
+        }
+        
+        @media only screen and (max-width:1200px) {
+            .section-masthead__header_background {
+                padding-top: 100px;
+                padding-bottom: 100px;
+                min-height: 500px
+            }
+            .section-masthead__subheading {
+                font-size: 45px
+            }
+        }
+        
+        @media only screen and (max-width:767px) {
+            .section-masthead__header_background {
+                padding-top: 120px;
+                padding-bottom: 60px;
+                min-height: 360px
+            }
+            .section-masthead h1 {
+                font-size: 12px
+            }
+            .section-masthead__subheading {
+                font-size: 33px
+            }
+        }
+        
+        .social {
+            list-style-type: none;
+            padding: 0;
+            margin: 0
+        }
+        
+        .social__item {
+            display: inline-block;
+            margin: 0 6px
+        }
+        
+        .social__icon {
+            display: flex!important;
+            align-items: center;
+            justify-content: center;
+            width: 50px!important;
+            height: 50px!important;
+            font-size: 18px;
+            color: #fff;
+            background-color: #8f8f8f;
+            border-radius: 100%
+        }
+        
+        @media only screen and (max-width:1200px) {
+            .social__icon {
+                width: 40px!important;
+                height: 40px!important;
+                font-size: 14px
+            }
+        }
+        
+        .text-center {
+            text-align: center!important
+        }
+        
+        .color-white {
+            color: #fff!important
+        }
+        
+        .elegant-icons {
+            font-family: ElegantIcons;
+            speak: none;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+        
+        h1 {
+            font-family: Montserrat, sans-serif
+        }
+        
+        h1 {
+            font-size: 60px;
+            margin: .25em 0;
+            line-height: 1.2
+        }
+        
+        @media only screen and (max-width:1200px) {
+            h1 {
+                font-size: 46px
+            }
+        }
+        
+        @media only screen and (max-width:767px) {
+            h1 {
+                font-size: 42px
+            }
+        }
+        
+        @-ms-viewport {
+            width: device-width
+        }
+        
+        html {
+            box-sizing: border-box;
+            -ms-overflow-style: scrollbar
+        }
+        
+        *,
+        ::after,
+        ::before {
+            box-sizing: inherit
+        }
+        
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto
+        }
+        
+        @media (min-width:576px) {
+            .container {
+                max-width: 540px
+            }
+        }
+        
+        @media (min-width:768px) {
+            .container {
+                max-width: 720px
+            }
+        }
+        
+        @media (min-width:992px) {
+            .container {
+                max-width: 960px
+            }
+        }
+        
+        @media (min-width:1200px) {
+            .container {
+                max-width: 1140px
+            }
+        }
+        
+        .container-fluid {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto
+        }
+        
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px
+        }
+        
+        .col,
+        .col-auto,
+        .col-lg-4 {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px
+        }
+        
+        .col {
+            -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            max-width: 100%
+        }
+        
+        .col-auto {
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none
+        }
+        
+        @media (min-width:992px) {
+            .col-lg-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%
+            }
+        }
+        
+        .d-none {
+            display: none!important
+        }
+        
+        @media (min-width:1200px) {
+            .d-xl-none {
+                display: none!important
+            }
+            .d-xl-block {
+                display: block!important
+            }
+        }
+        
+        .align-items-center {
+            -ms-flex-align: center!important;
+            align-items: center!important
+        }
+        
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box
+        }
+        
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -ms-overflow-style: scrollbar
+        }
+        
+        @-ms-viewport {
+            width: device-width
+        }
+        
+        article,
+        header,
+        section {
+            display: block
+        }
+        
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: #fff
+        }
+        
+        h1 {
+            margin-top: 0;
+            margin-bottom: .5rem
+        }
+        
+        ul {
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+        
+        ul ul {
+            margin-bottom: 0
+        }
+        
+        a {
+            color: #007bff;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-text-decoration-skip: objects
+        }
+        
+        img {
+            vertical-align: middle;
+            border-style: none
+        }
+        
+        ::-webkit-file-upload-button {
+            font: inherit;
+            -webkit-appearance: button
+        }
+        
+        @font-face {
+            font-family: ElegantIcons;
+            src: url(fonts/ElegantIcons.eot);
+            src: url(fonts/ElegantIcons.eot?#iefix) format("embedded-opentype"), url(fonts/ElegantIcons.woff) format("woff"), url(fonts/ElegantIcons.ttf) format("truetype"), url(fonts/ElegantIcons.svg#ElegantIcons) format("svg");
+            font-weight: 400;
+            font-style: normal
+        }
+        
+        .arrow_back,
+        .arrow_up {
+            font-family: ElegantIcons;
+            speak: none;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased
+        }
+        
+        .arrow_up:before {
+            content: "\21"
+        }
+        
+        .arrow_back:before {
+            content: "\4a"
+        }
+        
+        .jarallax {
+            position: relative;
+            z-index: 0
+        }
+    </style>
+        <link rel="stylesheet" href="css/vendor.css" media="screen">    
+        <link rel="stylesheet" href="css/main.css" media="screen">    
+        <link rel="stylesheet" href="css/css.css" as="style">   
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700%7COpen+Sans:300,400,400i,700subset=cyrillic">    
+        <link rel="stylesheet" href="./css/font-awesome.min.css" as="style" >    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <script>
+        ! function(n) {
+            "use strict";
+            n.loadCSS || (n.loadCSS = function() {});
+            var o = loadCSS.relpreload = {};
+            if (o.support = function() {
+                    var e;
+                    try {
+                        e = n.document.createElement("link").relList.supports("preload")
+                    } catch (t) {
+                        e = !1
+                    }
+                    return function() {
+                        return e
+                    }
+                }(), o.bindMediaToggle = function(t) {
+                    var e = t.media || "all";
 
-  <link rel="stylesheet" type="text/css" href="/default/css/css.css">
-  <link rel="stylesheet" type="text/css" href="/default/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="/default/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/default/css/animate.css">
-  <link rel="stylesheet" type="text/css" href="/default/css/style.css">
+                    function a() {
+                        t.addEventListener ? t.removeEventListener("load", a) : t.attachEvent && t.detachEvent("onload", a), t.setAttribute("onload", null), t.media = e
+                    }
+                    t.addEventListener ? t.addEventListener("load", a) : t.attachEvent && t.attachEvent("onload", a), setTimeout(function() {
+                        t.rel = "stylesheet", t.media = "only x"
+                    }), setTimeout(a, 3e3)
+                }, o.poly = function() {
+                    if (!o.support())
+                        for (var t = n.document.getElementsByTagName("link"), e = 0; e < t.length; e++) {
+                            var a = t[e];
+                            "preload" !== a.rel || "style" !== a.getAttribute("as") || a.getAttribute("data-loadcss") || (a.setAttribute("data-loadcss", !0), o.bindMediaToggle(a))
+                        }
+                }, !o.support()) {
+                o.poly();
+                var t = n.setInterval(o.poly, 500);
+                n.addEventListener ? n.addEventListener("load", function() {
+                    o.poly(), n.clearInterval(t)
+                }) : n.attachEvent && n.attachEvent("onload", function() {
+                    o.poly(), n.clearInterval(t)
+                })
+            }
+            "undefined" != typeof exports ? exports.loadCSS = loadCSS : n.loadCSS = loadCSS
+        }("undefined" != typeof global ? global : this);
+    </script>
+    <!-- <link rel="apple-touch-icon" sizes="57x57" href="https://artemsemkin.com/harizma/html/img/content/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://artemsemkin.com/harizma/html/img/content/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://artemsemkin.com/harizma/html/img/content/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://artemsemkin.com/harizma/html/img/content/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://artemsemkin.com/harizma/html/img/content/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://artemsemkin.com/harizma/html/img/content/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://artemsemkin.com/harizma/html/img/content/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://artemsemkin.com/harizma/html/img/content/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://artemsemkin.com/harizma/html/img/content/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://artemsemkin.com/harizma/html/img/content/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://artemsemkin.com/harizma/html/img/content/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://artemsemkin.com/harizma/html/img/content/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://artemsemkin.com/harizma/html/img/content/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/content/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/x-icon" href="https://artemsemkin.com/harizma/html/img/content/favicon.ico"> -->
+    <link type="text/css" rel="stylesheet" href="chrome-extension://ghihpjhpgdepnohngpgfcmcijmkggpaf/style.css">
+    <script type="text/javascript" charset="utf-8" src="chrome-extension://ghihpjhpgdepnohngpgfcmcijmkggpaf/js/page_context.js"></script>
+    <style type="text/css" id="jarallax-clip-0">
+        #jarallax-container-0 {
+            clip: rect(0 1903px 800px 0);
+            clip: rect(0, 1903px, 800px, 0);
+        }
+    </style>
+</head>
 
-  <!-- =======================================================
-    Theme Name: Laura
-    Theme URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-    ======================================================= -->
-  </head>
-
-  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="myFunction()">
-    <div class="header">
-      <div class="bg-color">
-        <header id="main-header">
-          <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                
-                <a href="/" class="logo"><img src="@{'logo.png'}" border="0" class="img-responsive" /></a>
-              </div>
-              <div class="collapse navbar-collapse" id="lauraMenu">
-                <ul class="nav navbar-nav navbar-left navbar-border">
-                  <li class="active"><a href="#main-header">Home</a></li>
-                  <li><a href="#about">Service</a></li>
-                  <li><a href="#portfolio">Work</a></li>
-                  <li><a href="#testimonial">Blog</a></li>
-                  <li><a href="#contact">Contact</a></li>
+<body screen_capture_injected="true">
+    <div class="preloader" style="visibility: hidden; opacity: 0;">
+        <div class="preloader__progress" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, -30);">
+            <div class="preloader__progress-fill" style="transform-origin: left center 0px; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+        </div>
+        <div class="preloader__curtains">
+            <div class="preloader__curtain bg-white" style="transform: translate(-100%, 0%) matrix(1, 0, 1, 1, 0, 0);"></div>
+            <div class="preloader__curtain bg-black" style="transform: translate(-100%, 0%) matrix(1, 0, 1, 1, 0, 0);"></div>
+            <div class="preloader__curtain bg-accent" style="transform: translate(-100%, 0%) matrix(1, 0, 1, 1, 0, 0);"></div>
+        </div>
+    </div>
+    <header class="header header_absolute header_white">
+        <div class="container-fluid header__container">
+            <div class="row align-items-center header__row">
+                <div class="col-auto header__wrapper-left header__col">
+                    <a class="logo" href="https://artemsemkin.com/harizma/html/index.html"><img class="lazy" src="./blog_files/logo-white.png" alt="Harizma" width="98" height="115" style=""></a>
+                </div>
+                <div class="col-auto header__wrapper-center header__col d-none d-xl-block">
+                    <ul class="menu">
+                        <li class="menu-item-has-children"><a href="https://artemsemkin.com/harizma/html/blog-grid.html#">Homepages</a>
+                            <ul class="sub-menu">
+                                <li><a href="https://artemsemkin.com/harizma/html/index.html">Homepage</a></li>
+                                <li><a href="https://artemsemkin.com/harizma/html/index-burger.html">Homepage Burger Menu</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="https://artemsemkin.com/harizma/html/blog-grid.html#">Portfolio</a>
+                            <ul class="sub-menu">
+                                <li><a href="https://artemsemkin.com/harizma/html/portfolio-2-col.html">Portfolio 2 col</a></li>
+                                <li><a href="https://artemsemkin.com/harizma/html/portfolio-3-col-fullwidth.html">Portfolio 3 col</a></li>
+                                <li><a href="https://artemsemkin.com/harizma/html/portfolio-masonry.html">Portfolio Masonry</a></li>
+                                <li><a href="https://artemsemkin.com/harizma/html/portfolio-single-project.html">Portfolio Single Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="https://artemsemkin.com/harizma/html/blog-grid.html#">Pages</a>
+                            <ul class="sub-menu">
+                                <li><a href="https://artemsemkin.com/harizma/html/services.html">Services</a></li>
+                                <li><a href="https://artemsemkin.com/harizma/html/pricing.html">Pricing</a></li>
+                                <li><a href="https://artemsemkin.com/harizma/html/404-page-1.html">404 Page v1</a></li>
+                                <li><a href="https://artemsemkin.com/harizma/html/404-page-2.html">404 Page v2</a></li>
+                                <li class="menu-item-has-children"><a href="https://artemsemkin.com/harizma/html/blog-grid.html#">Submenu Depth 3</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="https://artemsemkin.com/harizma/html/blog-grid.html#">Submenu Depth 4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="https://artemsemkin.com/harizma/html/blog-grid.html#">Blog</a>
+                            <ul class="sub-menu">
+                                <li><a href="https://artemsemkin.com/harizma/html/blog-grid.html">Blog Grid</a></li>
+                                <li><a href="https://artemsemkin.com/harizma/html/blog-single-post.html">Blog Single Post</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://artemsemkin.com/harizma/html/about.html">About Us</a></li>
+                        <li><a href="https://artemsemkin.com/harizma/html/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-auto header__wrapper-right header__col d-none d-xl-block">
+                    <ul class="social">
+                        <li class="social__item">
+                            <a class="fa fa-fw social__icon fa-facebook-f" href="https://artemsemkin.com/harizma/html/blog-grid.html#"></a>
+                        </li>
+                        <li class="social__item">
+                            <a class="fa fa-fw social__icon fa-twitter" href="https://artemsemkin.com/harizma/html/blog-grid.html#"></a>
+                        </li>
+                        <li class="social__item">
+                            <a class="fa fa-fw social__icon fa-github" href="https://artemsemkin.com/harizma/html/blog-grid.html#"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto header__wrapper-right header__col d-xl-none">
+                    <div class="burger js-burger">
+                        <div class="burger__line"></div>
+                        <div class="burger__line"></div>
+                        <div class="burger__line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__wrapper-overlay-menu" style="visibility: hidden; opacity: 0;">
+                <div class="header__overlay-menu-back elegant-icons arrow_back js-submenu-back" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 10, 0);"></div>
+                <ul class="container menu-overlay js-menu-overlay">
+                    <li class="menu-item-has-children">
+                        <a href="https://artemsemkin.com/harizma/html/blog-grid.html#" data-post-id="0">
+                            <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Homepages</span></div>
+                        </a>
+                        <ul class="sub-menu" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 10, 0);">
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/index.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Homepage</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/index-burger.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Homepage Burger Menu</span></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="https://artemsemkin.com/harizma/html/blog-grid.html#" data-post-id="1">
+                            <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Portfolio</span></div>
+                        </a>
+                        <ul class="sub-menu" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 10, 0);">
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/portfolio-2-col.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Portfolio 2 col</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/portfolio-3-col-fullwidth.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Portfolio 3 col</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/portfolio-masonry.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Portfolio Masonry</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/portfolio-single-project.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Portfolio Single Project</span></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="https://artemsemkin.com/harizma/html/blog-grid.html#" data-post-id="2">
+                            <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Pages</span></div>
+                        </a>
+                        <ul class="sub-menu" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 10, 0);">
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/services.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Services</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/pricing.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Pricing</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/404-page-1.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>404 Page v1</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/404-page-2.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>404 Page v2</span></div>
+                                </a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="https://artemsemkin.com/harizma/html/blog-grid.html#">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Submenu Depth 3</span></div>
+                                </a>
+                                <ul class="sub-menu" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 10, 0);">
+                                    <li>
+                                        <a href="https://artemsemkin.com/harizma/html/blog-grid.html#">
+                                            <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Submenu Depth 4</span></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="https://artemsemkin.com/harizma/html/blog-grid.html#" data-post-id="3">
+                            <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Blog</span></div>
+                        </a>
+                        <ul class="sub-menu" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 10, 0);">
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/blog-grid.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Blog Grid</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://artemsemkin.com/harizma/html/blog-single-post.html">
+                                    <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Blog Single Post</span></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://artemsemkin.com/harizma/html/about.html" data-post-id="4">
+                            <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>About Us</span></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://artemsemkin.com/harizma/html/contact.html" data-post-id="5">
+                            <div class="menu-overlay__item-wrapper" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);"><span>Contact</span></div>
+                        </a>
+                    </li>
                 </ul>
-                <div>
-
+                <div class="header__wrapper-overlay-widgets" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 10);">
+                    <ul class="social">
+                        <li class="social__item">
+                            <a class="fa fa-fw social__icon fa-facebook-f" href="https://artemsemkin.com/harizma/html/blog-grid.html#"></a>
+                        </li>
+                        <li class="social__item">
+                            <a class="fa fa-fw social__icon fa-twitter" href="https://artemsemkin.com/harizma/html/blog-grid.html#"></a>
+                        </li>
+                        <li class="social__item">
+                            <a class="fa fa-fw social__icon fa-github" href="https://artemsemkin.com/harizma/html/blog-grid.html#"></a>
+                        </li>
+                    </ul>
                 </div>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lauraMenu">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-              </div>
+                <div class="header__wrapper-background">
+                    <div class="header__background lazy" data-header-background-for="0" style="visibility: hidden; opacity: 0; transform: matrix(1.1, 0, 0, 1.1, 0, 0); background-image: url(&quot;img/assets/header/bg-1.jpg&quot;);"></div>
+                    <div class="header__background lazy" data-header-background-for="1" style="visibility: hidden; opacity: 0; transform: matrix(1.1, 0, 0, 1.1, 0, 0); background-image: url(&quot;img/assets/header/bg-2.jpg&quot;);"></div>
+                    <div class="header__background lazy" data-header-background-for="2" style="visibility: hidden; opacity: 0; transform: matrix(1.1, 0, 0, 1.1, 0, 0); background-image: url(&quot;img/assets/header/bg-3.jpg&quot;);"></div>
+                    <div class="header__background lazy" data-header-background-for="3" style="visibility: hidden; opacity: 0; transform: matrix(1.1, 0, 0, 1.1, 0, 0); background-image: url(&quot;img/assets/header/bg-4.jpg&quot;);"></div>
+                    <div class="header__background lazy" data-header-background-for="4" style="visibility: hidden; opacity: 0; transform: matrix(1.1, 0, 0, 1.1, 0, 0); background-image: url(&quot;img/assets/header/bg-5.jpg&quot;);"></div>
+                    <div class="header__background lazy" data-header-background-for="5" style="visibility: hidden; opacity: 0; transform: matrix(1.1, 0, 0, 1.1, 0, 0); background-image: url(&quot;img/assets/header/bg-6.jpg&quot;);"></div>
+                    <div class="header__diagonal-curtain-1" style="transform: translate(-50%, 0%) matrix(0.65606, -0.75471, 0.75471, 0.65606, 0, 0);"></div>
+                    <div class="header__diagonal-curtain-2" style="transform: translate(50%, 0%) matrix(0.65606, -0.75471, 0.75471, 0.65606, 0, 0);"></div>
+                    <div class="overlay overlay_accent header__overlay" style="visibility: hidden; opacity: 0;"></div>
+                </div>
             </div>
-          </nav>
-        </header>
-        <div class="wrapper">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 wow fadeIn delay-05s">
-                <div class="banner-text">
-                  <h2>Out of box ideas needs</h2>	
-                  <h2>out of box thinking</h2>
-                  <h3>Don't be a tom dick hary, Awwsome brand needs<br/> Anawesome website</h3>
-                  <h3>Good is not good, Better will not work,<br />It should be</h3>
-                </div>
-                <div class="overlay-detail text-center">
-                  <a href="#about"><i class="fa fa-angle-down"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+    </header>
+    <div class="page-wrapper" id="page-wrapper">
+        <section class="section section-masthead text-center color-white lazy jarallax" style="background-image: none;" data-jarallax-original-styles="background-image: url(&quot;img/assets/sectionMasthead/bg-2.jpg&quot;);">
+            <header class="container section-masthead__header section-masthead__header_background">
+                <div class="row">
+                    <div class="col">
+                        <h1>News</h1>
+                        <div class="section-masthead__subheading">Discover Our Blog</div>
+                    </div>
+                </div>
+            </header>
+            <div class="overlay overlay_dark"></div>
+            <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;">
+                <div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url(&quot;https://artemsemkin.com/harizma/html/img/assets/sectionMasthead/bg-2.jpg&quot;); position: fixed; top: 0px; left: 0px; width: 1903px; height: 860px; overflow: hidden; pointer-events: none; margin-top: 30px; transform: translate3d(0px, -30px, 0px);"></div>
+            </div>
+        </section>
+        <section class="section section-blog section_pt section_pb bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 section-blog__wrapper-post">
+                        <article class="figure-post bg-white figure-post_shadow">
+                            <a class="figure-post__wrapper-thumbnail" href="https://artemsemkin.com/harizma/html/blog-single-post.html"><img class="lazy" src="./blog_files/img-1.jpg" alt="" style=""></a>
+                            <div class="figure-post__inner">
+                                <div class="figure-post__wrapper-content">
+                                    <h3><a href="https://artemsemkin.com/harizma/html/blog-single-post.html">Standard post with image</a></h3>
+                                    <p>Our developers have a lot of experience in the development of web sites on any frameworks</p>
+                                </div>
+                                <div class="figure-post__footer">
+                                    <ul class="post-meta">
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_clock_alt"></div><span class="post-meta__item-text"></span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">April 9, 2019</a></li>
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_profile"></div><span class="post-meta__item-text">Posted by</span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">Admin</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 section-blog__wrapper-post">
+                        <article class="figure-post bg-white figure-post_shadow">
+                            <a class="figure-post__wrapper-thumbnail" href="https://artemsemkin.com/harizma/html/blog-single-post.html"><img class="lazy" src="./blog_files/img-2.jpg" alt="" style=""></a>
+                            <div class="figure-post__inner">
+                                <div class="figure-post__wrapper-content">
+                                    <h3><a href="https://artemsemkin.com/harizma/html/blog-single-post.html">Video post format</a></h3>
+                                    <p>Our developers have a lot of experience in the development of web sites on any frameworks</p>
+                                </div>
+                                <div class="figure-post__footer">
+                                    <ul class="post-meta">
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_clock_alt"></div><span class="post-meta__item-text"></span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">April 9, 2019</a></li>
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_profile"></div><span class="post-meta__item-text">Posted by</span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">Admin</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 section-blog__wrapper-post">
+                        <article class="figure-post bg-white figure-post_shadow">
+                            <a class="figure-post__wrapper-thumbnail" href="https://artemsemkin.com/harizma/html/blog-single-post.html"><img class="lazy" src="./blog_files/img-3.jpg" alt="" style=""></a>
+                            <div class="figure-post__inner">
+                                <div class="figure-post__wrapper-content">
+                                    <h3><a href="https://artemsemkin.com/harizma/html/blog-single-post.html">Standard post with image</a></h3>
+                                    <p>Our developers have a lot of experience in the development of web sites on any frameworks</p>
+                                </div>
+                                <div class="figure-post__footer">
+                                    <ul class="post-meta">
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_clock_alt"></div><span class="post-meta__item-text"></span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">April 9, 2019</a></li>
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_profile"></div><span class="post-meta__item-text">Posted by</span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">Admin</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-8 section-blog__wrapper-post">
+                        <article class="figure-post bg-white figure-post_shadow figure-post_gallery">
+                            <div class="figure-post__gallery">
+                                <div class="slider slider-gallery swiper-container js-slider-gallery swiper-container-horizontal">
+                                    <div class="swiper-wrapper" style="transition-duration: 800ms; transform: translate3d(-730px, 0px, 0px);">
+                                        <div class="swiper-slide swiper-slide-prev" style="width: 730px;"><img class="swiper-lazy swiper-lazy-loaded" src="./blog_files/img-gallery-1.jpg" alt=""></div>
+                                        <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 730px;"><img class="swiper-lazy swiper-lazy-loaded" src="./blog_files/img-gallery-1.jpg" alt=""></div>
+                                        <div class="swiper-slide swiper-slide-next" style="width: 730px;"><img class="swiper-lazy swiper-lazy-loaded" src="./blog_files/img-gallery-1.jpg" alt=""></div>
+                                    </div>
+                                    <div class="slider-gallery__wrapper-slider-nav">
+                                        <div class="slider-nav js-slider-gallery__nav swiper-pagination-clickable swiper-pagination-bullets">
+                                            <div class="slider-nav__dot" tabindex="0" role="button" aria-label="Go to slide 1"></div>
+                                            <div class="slider-nav__dot slider-nav__dot_active" tabindex="0" role="button" aria-label="Go to slide 2"></div>
+                                            <div class="slider-nav__dot" tabindex="0" role="button" aria-label="Go to slide 3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="overlay overlay_dark slider-gallery__overlay"></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            </div>
+                            <div class="figure-post__inner">
+                                <div class="figure-post__wrapper-content">
+                                    <h3><a href="https://artemsemkin.com/harizma/html/blog-single-post.html">Gallery post format</a></h3>
+                                    <p>Our developers have a lot of experience in the development of web sites on any frameworks</p>
+                                </div>
+                                <div class="figure-post__footer">
+                                    <ul class="post-meta">
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_clock_alt"></div><span class="post-meta__item-text"></span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">April 9, 2019</a></li>
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_profile"></div><span class="post-meta__item-text">Posted by</span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">Admin</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 section-blog__wrapper-post">
+                        <article class="figure-post bg-accent figure-post_shadow figure-post_quote">
+                            <div class="figure-post__inner">
+                                <div class="figure-post__footer">
+                                    <ul class="post-meta">
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_clock_alt"></div><span class="post-meta__item-text"></span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">April 9, 2019</a></li>
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_profile"></div><span class="post-meta__item-text">Posted by</span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">Admin</a></li>
+                                    </ul>
+                                </div>
+                                <a class="figure-post__wrapper-quote" href="https://artemsemkin.com/harizma/html/blog-single-post.html">
+                                    <blockquote>
+                                        <p>You have to learn the rules of the game. And then you have to play better than anyone else.<cite>– Albert Einstein</cite></p>
+                                    </blockquote>
+                                </a>
+                                <div class="figure-post__sign elegant-icons icon_quotations"></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 section-blog__wrapper-post">
+                        <article class="figure-post bg-white figure-post_shadow">
+                            <a class="figure-post__wrapper-thumbnail" href="https://artemsemkin.com/harizma/html/blog-single-post.html"><img class="lazy" src="./blog_files/img-4.jpg" alt="" style=""></a>
+                            <div class="figure-post__inner">
+                                <div class="figure-post__wrapper-content">
+                                    <h3><a href="https://artemsemkin.com/harizma/html/blog-single-post.html">Standard post with image</a></h3>
+                                    <p>Our developers have a lot of experience in the development of web sites on any frameworks</p>
+                                </div>
+                                <div class="figure-post__footer">
+                                    <ul class="post-meta">
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_clock_alt"></div><span class="post-meta__item-text"></span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">April 9, 2019</a></li>
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_profile"></div><span class="post-meta__item-text">Posted by</span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">Admin</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 section-blog__wrapper-post">
+                        <article class="figure-post bg-white figure-post_shadow">
+                            <a class="figure-post__wrapper-thumbnail" href="https://artemsemkin.com/harizma/html/blog-single-post.html"><img class="lazy" src="./blog_files/img-5.jpg" alt="" style=""></a>
+                            <div class="figure-post__inner">
+                                <div class="figure-post__wrapper-content">
+                                    <h3><a href="https://artemsemkin.com/harizma/html/blog-single-post.html">Standard post with image</a></h3>
+                                    <p>Our developers have a lot of experience in the development of web sites on any frameworks</p>
+                                </div>
+                                <div class="figure-post__footer">
+                                    <ul class="post-meta">
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_clock_alt"></div><span class="post-meta__item-text"></span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">April 9, 2019</a></li>
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_profile"></div><span class="post-meta__item-text">Posted by</span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">Admin</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 section-blog__wrapper-post">
+                        <article class="figure-post bg-white figure-post_shadow">
+                            <a class="figure-post__wrapper-thumbnail" href="https://artemsemkin.com/harizma/html/blog-single-post.html"><img class="lazy" src="./blog_files/img-6.jpg" alt="" style=""></a>
+                            <div class="figure-post__inner">
+                                <div class="figure-post__wrapper-content">
+                                    <h3><a href="https://artemsemkin.com/harizma/html/blog-single-post.html">Standard post with image</a></h3>
+                                    <p>Our developers have a lot of experience in the development of web sites on any frameworks</p>
+                                </div>
+                                <div class="figure-post__footer">
+                                    <ul class="post-meta">
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_clock_alt"></div><span class="post-meta__item-text"></span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">April 9, 2019</a></li>
+                                        <li class="post-meta__item">
+                                            <div class="post-meta__item-icon elegant-icons icon_profile"></div><span class="post-meta__item-text">Posted by</span>&nbsp;<a class="post-meta__link" href="https://artemsemkin.com/harizma/html/blog-grid.html#">Admin</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="section-blog__wrapper-button">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center"><a class="button button_solid button_accent button_shadow" href="https://artemsemkin.com/harizma/html/blog-grid.html#">Load More</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="section footer text-center bg-white">
+            <div class="container">
+                <div class="row footer__wrapper-widget">
+                    <div class="col">
+                        <a class="logo" href="https://artemsemkin.com/harizma/html/index.html"><img class="lazy" src="./blog_files/logo.png" alt="Harizma" width="98" height="115" style=""></a>
+                    </div>
+                </div>
+                <div class="row footer__wrapper-widget">
+                    <div class="col">
+                        <ul class="social">
+                            <li class="social__item">
+                                <a class="fa fa-fw social__icon fa-facebook-f" href="https://artemsemkin.com/harizma/html/blog-grid.html#"></a>
+                            </li>
+                            <li class="social__item">
+                                <a class="fa fa-fw social__icon fa-twitter" href="https://artemsemkin.com/harizma/html/blog-grid.html#"></a>
+                            </li>
+                            <li class="social__item">
+                                <a class="fa fa-fw social__icon fa-instagram" href="https://artemsemkin.com/harizma/html/blog-grid.html#"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row footer__wrapper-widget">
+                    <div class="col"><small class="copyright">© 2019 Harizma – Creative Agency HTML5 Template</small></div>
+                </div>
+            </div>
+        </footer>
+        <div class="scroll-up js-scroll-up" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 20);">
+            <div class="scroll-up__icon arrow_up"></div>
+        </div>
     </div>
-    <section id="service" class=" section wow fadeIn delay-05s">   
-      <div class="container-fluid">
-        <div class="row ">       
-
-          <div class="col-sm-2 work-border">
-            <blockquote>
-              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_1-1.png">
-              <h5>EXPERTS</h5>
-              <p>Our experts is committed to delivering high quality products to clients helping them in this constantly changing and challenging biz world.Our professional approach, creativity, fast and effective communication, reliability, trust and relationship with the clients help in delivering the best possible solution to the client.</p>
-            </blockquote>
-            <div class="col-sm-12">
-              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
-            </div>
-          </div>
-          <div class="col-sm-2 col-half-offset work-border">
-            <blockquote>
-              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_2-1.png">
-              <h5>FREE TECHNICAL SUPPORT</h5>
-              <p>Each and every member of the team are all the time available on tools like Skype so that they can be approached anytime during the development phase of a project. In additions, sending daily updates during development of a project is mandatory for every member of the team. This helps in reducing the communication gap which can ruin a project development.</p>
-            </blockquote>
-            <div class="col-sm-12">
-              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
-            </div>
-          </div>
-          <div class="col-sm-2 col-half-offset work-border">
-            <blockquote>
-              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_3-1.png">
-              <h5>PROJECTS COMPLETED</h5>
-              <p>Dmarkweb has worked for more than 100 clients and have completed more than 500 projects till date. Dmarkweb brings a lot of value addition for every client they have worked with. Dmarkweb excels not in providing the design and development of a project but also uses proper project management techniques. </p>
-            </blockquote>
-            <div class="col-sm-12">
-              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
-            </div>
-          </div>
-          <div class="col-sm-2 col-half-offset work-border">
-            <blockquote>
-              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_4-1.png">
-              <h5>EXPERIENCE</h5>
-              <p>Dmarkweb has more than 6 years of work experience. We have a team that strives hard to deliver innovative and quality solutions that are customer centric. Our main aim is to enhance our consumer’s experience with our solutions by providing them just what they imagined. </p>
-            </blockquote>
-            <div class="col-sm-12">
-              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
-            </div>
-          </div>
-          <div class="col-sm-2 col-half-offset work-border">
-            <blockquote>
-              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_3-1.png">
-              <h5>EXPERIENCE</h5>
-              <p>If you want to work with honest, reliable, and speedy team, then stop searching and award your project to Cleverbird. I couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award yourvI couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award your. </p>
-            </blockquote>
-            <div class="col-sm-12">
-              <div class="pull-right"> <span class="testimonials-name">Get in touch</span></div>
-            </div>
-          </div>
-          <div class="col-sm-2 col-half-offset work-border">
-            <blockquote>
-              <img src="http://dmarkweb.com/wp-content/uploads/2016/09/icon_3-1.png">
-              <h5>EXPERIENCE</h5>
-              <p>If you want to work with honest, reliable, and speedy team, then stop searching and award your project to Cleverbird. I couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award yourvI couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award your. </p>
-            </blockquote>
-            <div class="col-sm-12">
-              <div class="pull-right"> <span class="testimonials-name">Get in touch</span> </div>
-            </div>
-          </div>        
-        </div>    
-      </div>
-    </section>
-    <section id="about" class="section-padding wow fadeIn delay-05s">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3">
-          <h2 class="title text-center">WHAT OUR <span class="deco">Client</span> Say	</h2>
-        </div>
-          <div class="test-sec">
-            <div class="col-sm-3">
-              <div class="card1">
-                <a href=" /ecommerce ">
-                  <div class="card-icn3 card-icn--ux-design"></div>         
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card2">
-                <a href=" /responsive-design ">
-                  <div class="card-icn4 card-icn--ux-design"></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card3">
-                <a href=" /web-design ">
-                  <div class="card-icn1 card-icn--ux-design"></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card1">
-                <a href=" /ecommerce ">
-                  <div class="card-icn3 card-icn--ux-design"></div>         
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card2">
-                <a href=" /responsive-design ">
-                  <div class="card-icn4 card-icn--ux-design"></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card3">
-                <a href=" /web-design ">
-                  <div class="card-icn1 card-icn--ux-design"></div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-sm-3">
-              <div class="card1">
-                <a href=" /web-design ">
-                  <div class="card-icn1 card-icn--ux-design"></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card2">
-                <a href=" /web-design ">
-                  <div class="card-icn1 card-icn--ux-design"></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card3">
-                <a href=" /web-design ">
-                  <div class="card-icn1 card-icn--ux-design"></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="portfolio" class="section-padding wow fadeInUp delay-05s">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="title text-center">Let's <span class="deco">See</span> My Work</h2>
-          </div>
-          <div class="col-md-12">
-            <div id="myGrid" class="grid-padding">
-              <div class="col-md-4 col-sm-4 padding-right-zero">
-                <a href=""><img src="default/img/portfolio01.jpg" class="img-responsive"></a>
-                <a href=""><img src="default/img/port01.jpg" class="img-responsive"></a>
-                <a href=""><img src="default/img/port02.jpg" class="img-responsive"></a>
-
-              </div>
-              <div class="col-md-4 col-sm-4 padding-right-zero">
-                <a href=""><img src="default/img/port03.jpg" class="img-responsive"></a>
-                <a href=""><img src="default/img/port04.jpg" class="img-responsive"></a>
-                <a href=""><img src="default/img/port05.jpg" class="img-responsive"></a>
-
-              </div>
-              <div class="col-md-4 col-sm-4 padding-right-zero">
-                <a href=""><img src="default/img/port06.jpg" class="img-responsive"></a>
-                <a href=""><img src="default/img/port02.jpg" class="img-responsive"></a>
-                <a href=""><img src="default/img/portfolio02.jpg" class="img-responsive"></a>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonial" class="section-padding wow fadeInUp">
-      <div class="container">
-        <div class="row">
-          <h2 class="title text-center">WHAT OUR <span class="deco">Client</span> Say	</h2>
-          <div class="test-sec">
-            <div class="col-sm-4">
-              <blockquote>
-                <p>If you want to work with honest, reliable, and speedy team, then stop searching and award your project to Cleverbird. I couldn't be more satisfied. If you want to work with honest, reliable, and speedy team, then stop searching and award your couldn't be more satisfied. If you want to work with honest, reliable, and speedy team, then stop searching and award your.</p>
-              </blockquote>
-              <div class="carousel-info">
-                <div class="pull-left"> <span class="testimonials-name">Morgan</span> <span class="testimonials-post">CEO,  Company Inc.</span> </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <blockquote>
-                <p>Great quality, Great work, Awesome results, and exceptionally competitive pricing is how I will describe WebinaCube! I already have referred them to various colleagues & friends of mine and will gladly recommend them to anyone needing web design and web development services. They have very efficiently accomplished my wordpress development Project.</p>
-              </blockquote>
-              <div class="carousel-info">
-                <div class="pull-left"> <span class="testimonials-name">Nathalie Ung</span> <span class="testimonials-post">CEO,  Company Inc.</span> </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <blockquote>
-                <p>If you want to work with honest, reliable, and speedy team, then stop searching and award your project to Cleverbird. I couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award yourvI couldn't be more satisfied.If you want to work with honest, reliable, and speedy team, then stop searching and award your. </p>
-              </blockquote>
-              <div class="carousel-info">
-                <div class="pull-left"> <span class="testimonials-name">Morgan Beulher</span> <span class="testimonials-post">CEO,  Company Inc.</span> </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact" class="section-padding wow fadeIn delay-05s">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="contact-sec text-center">
-              <h2>Lets’s make a deal and work it out.|</h2>
-              <p>We are driven by creating experiences that deliver results for your business and for your consumers.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 ">
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validation"></div>
-              </div>
-
-              <div class="text-left"><button type="submit" class="btn btn-primary btn-lg">Send Message</button></div>
-            </form>
-          </div>
-          <div class="col-md-6">
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <footer class="footer-2 text-center-xs bg--white">
-      <div class="container">
-        <!--end row-->
-        <div class="row">
-       <!-- <div class="col-md-6">
-          <div class="footer">
-            © Copyright Laura Theme. All Rights Reserved
-            <div class="credits">
-              
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 text-right">
-          <ul class="social-list">
-            <li>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-dribbble"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-vimeo"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-instagram"></i></a>
-            </li>
-          </ul>
-        </div>-->
-        <div class="col-md-12"><p class="text-center mt-5"><a href="#about" rel="nofollow">Return to top of page</a></p></div>
-      </div>
-      <!--end row-->
-    </div>
-  </footer>
-
-  <script src="/default/js/jquery.min.js"></script>
-  <script src="/default/js/jquery.easing.min.js"></script>
-  <script src="/default/js/bootstrap.min.js"></script>
-  <script src="/default/js/wow.js"></script>
-  <script src="/default/js/custom.js"></script>
-  <script src="contactform/contactform.js"></script>
-
-  <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
+    <script src="./js/vendor.js.download"></script>
+    <script src="./js/components.js.download" async=""></script>
 </body>
 
 </html>

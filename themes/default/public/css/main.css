@@ -1366,7 +1366,7 @@ a:focus{
 }
 .figure-service{
     position:relative;
-    padding:125px 15px 100px 15px;
+    padding:80px 15px 100px 15px;
     height:100%;
     z-index:50;
     transition:all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
@@ -1399,7 +1399,7 @@ a:focus{
     bottom:28px
 }
 .figure-service__icon{
-    font-size:64px;
+    font-size:64px!important;
     margin-bottom:15px
 }
 .figure-service__icon:before{
@@ -2345,7 +2345,8 @@ a:focus{
     background-color:var(--color-accent-primary);
     border-radius:100%;
     color:#fff;
-    font-size:24px;
+    padding-top: 16px;
+    font-size:24px!important;
     transition:all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
 }
 .scroll-up__icon:hover{
